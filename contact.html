@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            gap: 10px;
+        }
+        
+        .tex {
+            margin-top: 20px;
+        }
+
+        .con {
+            display: flex;
+            gap: 10px;
+        }
+
+        .admin-info {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .admin-info h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .admin-info strong {
+            font-weight: bold;
+        }
+
+        footer {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.864);
+            color: aliceblue;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .containerf {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="tex"><h1>Contact Us</h1></div>
+    <div class="con">
+        <div class="admin-info">
+            <h3>Shubham</h3>
+            <p><strong>Phone Number:</strong> <span id="shubhamPhone"></span></p>
+            <p><strong>Email:</strong> <span id="shubhamEmail"></span></p>
+        </div>
+        <div class="admin-info">
+            <h3>Harsh</h3>
+            <p><strong>Phone Number:</strong> <span id="harshPhone"></span></p>
+            <p><strong>Email:</strong> <span id="harshEmail"></span></p>
+        </div>
+        <div class="admin-info">
+            <h3>Uday</h3>
+            <p><strong>Phone Number:</strong> <span id="udayPhone"></span></p>
+            <p><strong>Email:</strong> <span id="udayEmail"></span></p>
+        </div>
+        <div class="admin-info">
+            <h3>Aryan</h3>
+            <p><strong>Phone Number:</strong> <span id="aryanPhone"></span></p>
+            <p><strong>Email:</strong> <span id="aryanEmail"></span></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="containerf">
+            <p>&copy; <?php echo date("Y"); ?> BookShop Automation System. All Rights Reserved.</p>
+            <p>Designed by Group 12</p>
+        </div>
+    </footer>
+
+    <script>
+        // Generate a random 8-digit phone number starting with "94"
+        function generatePhoneNumber() {
+            let phoneNumber = '94';
+            for (let i = 0; i < 8; i++) {
+                phoneNumber += Math.floor(Math.random() * 10);
+            }
+            return phoneNumber;
+        }
+
+        // Generate a random email address starting with the given name
+        function generateEmail(name) {
+            let chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            let email = name.toLowerCase();
+            for (let i = 0; i < 8; i++) {
+                email += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            email += '@example.com'; // You can replace 'example.com' with your domain
+            return email;
+        }
+
+        // Display the generated phone numbers and emails
+        document.getElementById('shubhamPhone').textContent = generatePhoneNumber();
+        document.getElementById('shubhamEmail').textContent = generateEmail('Shubham');
+
+        document.getElementById('harshPhone').textContent = generatePhoneNumber();
+        document.getElementById('harshEmail').textContent = generateEmail('Harsh');
+
+        document.getElementById('udayPhone').textContent = generatePhoneNumber();
+        document.getElementById('udayEmail').textContent = generateEmail('Uday');
+
+        document.getElementById('aryanPhone').textContent = generatePhoneNumber();
+        document.getElementById('aryanEmail').textContent = generateEmail('Aryan');
+    </script>
+</body>
+</html>
